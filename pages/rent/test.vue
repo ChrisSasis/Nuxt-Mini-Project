@@ -254,7 +254,7 @@ export default {
 }
 @media screen and (max-width: 726px) {
     .cover-banner:before {
-        content:inherit;
+        content:none;
     }
 }
 </style>
