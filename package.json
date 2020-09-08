@@ -1,0 +1,21 @@
+{
+  "name": "Parenta",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "css-loader": "^4.2.2",
+    "nuxt": "^2.14.0",
+    "style-loader": "^1.2.1",
+    "swiper": "^6.2.0",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^2.1.0"
+  }
+}

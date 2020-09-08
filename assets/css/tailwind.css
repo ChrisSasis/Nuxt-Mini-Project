@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.roboto {
+    font-family: 'Roboto',sans-serif;
+}
+
+.work {
+    font-family: 'Work Sans',sans-serif;
+}
+
+.bg-blue-500 {
+    background-color:#56D2DA;
+}
+
+.border-blue-500 {
+    border-color:#56D2DA;
+}
+
+.select-holder {
+    position:relative;
+}
+
+.select-holder:before {
+    content:'';
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #56D2DA;
+    position: absolute;
+    right:1rem;
+    top:50%;
+    transform:translateY(-50%);
+}
+.text-blue {
+    color:#56D2DA;
+}
+.text-gray {
+    color:#848484;
+}
+.text-ccc {
+    color:#CCCCCC;
+}
