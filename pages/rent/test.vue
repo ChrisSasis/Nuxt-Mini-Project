@@ -23,24 +23,43 @@
             <div class="px-0 lg:px-10 hidden md:block">
                 <img src="~/assets/img/singlebanner.png" alt="" class="w-full">
             </div>
-            <swiper ref="mySwiper" :options="swiperOption" class="swiper md:mt-5">
-                <swiper-slide v-for="photo in items" :key="photo.id">
-                    <div class="img-holder">
-                        <img :src="photo.src" alt="">
-                    </div>
-                </swiper-slide>
-                <div class="swiper-pagination" slot="pagination"></div>
-            </swiper>
-            <div class="count text-right">
-                <button class="border text-base border-blue bg-white text-base py-2 px-3">Show All Photos</button>
+            <div class="md:hidden">
+                <swiper ref="mySwiper" :options="swiperOption" class="swiper md:mt-5 md:hidden">
+                    <swiper-slide>
+                        <div class="img-holder">
+                            <img src="~/assets/img/gallery-1.jpg"/>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="img-holder">
+                            <img src="~/assets/img/gallery-2.jpg"/>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="img-holder">
+                            <img src="~/assets/img/gallery-1.jpg"/>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="img-holder">
+                            <img src="~/assets/img/gallery-2.jpg"/>
+                        </div>
+                    </swiper-slide>
+                    <div class="swiper-pagination" slot="pagination"></div>
+                </swiper>
+                <div class="count text-right">
+                    <button class="border text-base border-blue bg-white text-base py-2 px-3">Show All Photos</button>
+                </div>
+
+                <nuxt-link to="/search/result">
+                    <button class="md:hidden back-btn text-white rounded-full">
+                        <svg width="12" height="20" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.45881 8.00338L9.44437 2.01756C9.60918 1.85314 9.69985 1.6333 9.69985 1.39889C9.69985 1.16436 9.60918 0.94465 9.44437 0.779967L8.91988 0.25574C8.75533 0.0907967 8.53536 0 8.30095 0C8.06655 0 7.84684 0.0907967 7.68216 0.25574L0.555394 7.38237C0.390061 7.54758 0.299524 7.76832 0.300174 8.00299C0.299524 8.2387 0.38993 8.45919 0.555394 8.62452L7.67552 15.7443C7.84021 15.9092 8.05991 16 8.29445 16C8.52886 16 8.74856 15.9092 8.91338 15.7443L9.43773 15.22C9.77894 14.8788 9.77894 14.3234 9.43773 13.9823L3.45881 8.00338Z" fill="white"/>
+                        </svg>
+                    </button>
+                </nuxt-link>
+
             </div>
-            <nuxt-link to="/search/result">
-            <button class="back-btn text-white rounded-full">
-                <svg width="12" height="20" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.45881 8.00338L9.44437 2.01756C9.60918 1.85314 9.69985 1.6333 9.69985 1.39889C9.69985 1.16436 9.60918 0.94465 9.44437 0.779967L8.91988 0.25574C8.75533 0.0907967 8.53536 0 8.30095 0C8.06655 0 7.84684 0.0907967 7.68216 0.25574L0.555394 7.38237C0.390061 7.54758 0.299524 7.76832 0.300174 8.00299C0.299524 8.2387 0.38993 8.45919 0.555394 8.62452L7.67552 15.7443C7.84021 15.9092 8.05991 16 8.29445 16C8.52886 16 8.74856 15.9092 8.91338 15.7443L9.43773 15.22C9.77894 14.8788 9.77894 14.3234 9.43773 13.9823L3.45881 8.00338Z" fill="white"/>
-                </svg>
-            </button>
-            </nuxt-link>
         </div>
         <div class="px-3 lg:px-10 mt-5 lg:mt-16">
             <div class="md:flex mb-4">
