@@ -231,7 +231,7 @@ export default {
     border-top:1px solid #9CDDE1;
 }
 .img-holder {
-    height:260px;
+    height:250px;
     overflow: hidden;
 }
 .count {
