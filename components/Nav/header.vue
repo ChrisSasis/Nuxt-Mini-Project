@@ -32,8 +32,8 @@
                 </ul>
             </nav>
             <div class="auth-search">
-                <a href="#" class="nav-link inline-block text-sm font-bold roboto tracking-wide pr-2">Sign In</a> <span>/</span>
-                <a href="#" class="nav-link inline-block text-sm font-bold roboto tracking-wide pl-2 pr-5 md:pr-0">Register</a>
+                <a href="/login" class="nav-link inline-block text-sm font-bold roboto tracking-wide pr-2">Sign In</a> <span>/</span>
+                <a href="/register" class="nav-link inline-block text-sm font-bold roboto tracking-wide pl-2 pr-5 md:pr-0">Register</a>
                 <button class="burger inline-block md:hidden align-middle" @click="showMenu">
                     <div class="burger-bar"></div>
                     <div class="burger-bar"></div>
