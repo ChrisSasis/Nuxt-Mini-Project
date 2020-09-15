@@ -13,7 +13,10 @@
     "nuxt": "^2.14.0",
     "style-loader": "^1.2.1",
     "swiper": "^6.2.0",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-cool-lightbox": "^2.5.1",
+    "vue-light-gallery": "^1.0.1",
+    "vue-silentbox": "^2.2.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.1.0"

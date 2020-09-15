@@ -24,6 +24,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Work+Sans:wght@300;400;700&display=swap' },
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/vue-cool-lightbox/dist/vue-cool-lightbox.min.css"
+      }
     ]
   },
   /*
@@ -37,6 +41,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/nuxt-swiper-plugin.js', mode: 'client' },
+    { src: '@/plugins/vue-cool-lightbox.js', mode: 'client' },
   ],
   /*
   ** Auto import components

@@ -23,32 +23,23 @@
             <div class="px-0 lg:px-10 hidden md:block">
                 <img src="~/assets/img/singlebanner.png" alt="" class="w-full">
             </div>
+            <CoolLightBox 
+            :items="items" 
+            :index="index"
+            @close="index = null">
+            </CoolLightBox>
+            <div class="images-wrapper">
             <div class="md:hidden">
                 <swiper ref="mySwiper" :options="swiperOption" class="swiper md:mt-5 md:hidden">
-                    <swiper-slide>
-                        <div class="img-holder">
-                            <img src="~/assets/img/gallery-1.jpg"/>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="img-holder">
-                            <img src="~/assets/img/gallery-2.jpg"/>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="img-holder">
-                            <img src="~/assets/img/gallery-1.jpg"/>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="img-holder">
-                            <img src="~/assets/img/gallery-2.jpg"/>
+                    <swiper-slide v-for="(image, imageIndex) in items" :key="imageIndex">
+                        <div class="img-holder"  @click="index = imageIndex" >
+                            <img :src="image.src" alt="">
                         </div>
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
                 <div class="count text-right">
-                    <button class="border text-base border-blue bg-white text-base py-2 px-3">Show All Photos</button>
+                    <!-- <button class="border text-base border-blue bg-white text-base py-2 px-3" >Show All Photos</button> -->
                 </div>
 
                 <nuxt-link to="/search/result">
@@ -61,6 +52,7 @@
 
             </div>
         </div>
+    </div>
         <div class="px-3 lg:px-10 mt-5 lg:mt-16">
             <div class="md:flex mb-4">
                 <div class="md:w-1/2 lg:w-2/3 pr-10">
@@ -132,18 +124,9 @@
             </div>
             <div class="pt-0 hidden md:block">
                 <h3 class="text-xl roboto font-bold">Gallery</h3>
-                <swiper ref="mySwiper" :options="swiperOption" class="swiper mt-5">
-                    <swiper-slide>
-                        <img src="~/assets/img/gallery-1.jpg" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="~/assets/img/gallery-2.jpg" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="~/assets/img/gallery-1.jpg" alt="">
-                    </swiper-slide>
-                    <swiper-slide>
-                        <img src="~/assets/img/gallery-2.jpg" alt="">
+                <swiper ref="mySwiper" :options="swiperOption" class="swiper mt-5" >
+                    <swiper-slide v-for="(image, imageIndex) in items" :key="imageIndex">
+                        <img :src="image.src" alt="" @click="index = imageIndex">
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -157,41 +140,61 @@
 <script>
 import headerMain from '~/components/Nav/header.vue';
 import footerMain from '~/components/Footer/footer.vue';
-
+import CoolLightBox from 'vue-cool-lightbox';
+ 
 export default {
     name: "slug",
     components: {
         headerMain,
         footerMain,
+        CoolLightBox,
     },
     data() {
       return {
         items: [
             {
                 id: 1,
-                src: '/_nuxt/assets/img/gallery-1.jpg'
+                name: 'sas',
+                src: '/gallery-1.jpg'
             },
             {
                 id: 2,
-                src: '/_nuxt/assets/img/gallery-2.jpg'
+                name: 'sas',
+                src: '/gallery-2.jpg'
             },
             {
                 id: 3,
-                src: '/_nuxt/assets/img/gallery-1.jpg'
+                name: 'sas',
+                src: '/gallery-1.jpg'
             },
             {
                 id: 4,
-                src: '/_nuxt/assets/img/gallery-2.jpg'
+                name: 'sas',
+                src: '/gallery-2.jpg'
             },
         ],
         total: "",
         swiperOption: {
-        slidesPerView: 1,
-        //   spaceBetween: 30,
-          pagination: {
-            el: '.swiper-pagination',
-          },
-        }
+            // slidesPerView: 1,
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                650: {
+                    slidesPerView: 2,
+                    spaceBetween:20
+                },
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        },
+        index: null
       }
     },
     computed: {
@@ -207,7 +210,22 @@ export default {
 <style>
 .swiper-slide {
     width: auto;
-  }
+}
+.cool-lightbox {
+    background:#fff!important;
+}
+.cool-lightbox .cool-lightbox__slide img {
+    box-shadow: none !important;
+}
+.cool-lightbox-toolbar .cool-lightbox-toolbar__btn,
+.cool-lightbox .cool-lightbox-button>.cool-lightbox-button__icon {
+    background:#56D2DA;
+    color:#fff !important;
+}
+.swiper img {
+    width: 100%;
+    cursor:pointer;
+}
 </style>
 
 <style scoped>
@@ -231,7 +249,7 @@ export default {
     border-top:1px solid #9CDDE1;
 }
 .img-holder {
-    height:250px;
+    height:220px;
     overflow: hidden;
 }
 .count {
@@ -252,7 +270,7 @@ export default {
     z-index: 100;
     background:rgba(0,0,0,0.2);
 }
-@media screen and (max-width: 726px) {
+@media screen and (max-width: 1023px) {
     .cover-banner:before {
         content:none;
     }
