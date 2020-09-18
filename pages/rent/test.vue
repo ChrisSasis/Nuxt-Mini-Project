@@ -21,7 +21,7 @@
         <div class="cover-banner relative">
             <!-- cover -->
             <div class="px-0 lg:px-10 hidden md:block">
-                <img src="~/assets/img/singlebanner.png" alt="" class="w-full">
+                <img src="https://a.storyblok.com/f/93275/1300x478/5a92f0f24e/singlebanner.png" alt="" class="w-full">
             </div>
             <CoolLightBox 
             :items="items" 
